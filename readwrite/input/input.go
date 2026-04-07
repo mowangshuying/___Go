@@ -32,7 +32,7 @@ func main() {
 		fmt.Printf("There were errors reading, exiting program\n")
 	}
 
-	fmt.Printf("You name is %s\n", input)
+	fmt.Printf("You name is %s", input)
 
 	switch input {
 	case "Philip\r\n":
