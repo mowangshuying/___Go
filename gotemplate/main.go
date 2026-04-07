@@ -14,7 +14,6 @@ func init() { // initialization of package
 
 func main() {
 	// var a int
-
 	Func1()
 }
 
@@ -22,4 +21,6 @@ func (t T) Method1() {
 
 }
 
-func Func1() {}
+func Func1() {
+	fmt.Print("Func1...\n")
+}
