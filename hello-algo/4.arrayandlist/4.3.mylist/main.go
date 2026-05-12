@@ -62,6 +62,8 @@ func (this *MyList) insert(index int, num int) {
 		this.arr[j+1] = this.arr[j]
 	}
 	
+	this.arr[index] = num
+	
 	this.arrSize++
 }
 
@@ -97,8 +99,13 @@ func main() {
 	mylist.add(4)
 	mylist.add(2)
 	
-	mylist.remove(3)
-	fmt.Printf("list:\n%v", mylist)
+	mylist.remove(0)
+	fmt.Printf("list:%v\n", mylist.toArray())
+	
+	mylist.insert(0, 10)
+	fmt.Printf("list:%v\n", mylist.toArray())
+	
+	mylist.
 }
 
 
