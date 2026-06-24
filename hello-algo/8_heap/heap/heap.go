@@ -4,7 +4,7 @@ type IntHeap []int
 
 func (h *IntHeap) Push(x int) {
 	*h = append(*h, x)
-	h.SiftUp(h.Len() - 1)
+	h.SiftUp(h.Size() - 1)
 }
 
 func (h *IntHeap) Pop() int {
@@ -12,19 +12,19 @@ func (h *IntHeap) Pop() int {
 		return -1
 	}
 
-	h.Swap(0, h.Len()-1)
-	val := (*h)[len(*h)-1]
-	*h = (*h)[:len(*h)-1]
+	h.Swap(0, h.Size()-1)
+	val := (*h)[h.Size()-1]
+	*h = (*h)[:h.Size()-1]
 	h.SiftDown(0)
 	return val
 }
 
-func (h *IntHeap) Len() int {
+func (h *IntHeap) Size() int {
 	return len(*h)
 }
 
 func (h *IntHeap) IsEmpty() bool {
-	return h.Len() == 0
+	return h.Size() == 0
 }
 
 // func (h *IntHeap) Less(i, j int) bool {
@@ -71,11 +71,11 @@ func (h *IntHeap) SiftUp(i int) {
 func (h *IntHeap) SiftDown(i int) {
 	for true {
 		l, r, max := h.Left(i), h.Right(i), i
-		if l < h.Len() && (*h)[l] > (*h)[max] {
+		if l < h.Size() && (*h)[l] > (*h)[max] {
 			max = l
 		}
 
-		if r < h.Len() && (*h)[r] > (*h)[max] {
+		if r < h.Size() && (*h)[r] > (*h)[max] {
 			max = r
 		}
 

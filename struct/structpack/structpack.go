@@ -9,6 +9,6 @@ type ExpStruct struct {
 	Mf float32
 }
 
-func (s *ExpStruct)logself() {
+func (s *ExpStruct) LogSelf() {
 	fmt.Printf("Mi:%d, Mf:%d\n", s.Mi, s.Mf)
 }

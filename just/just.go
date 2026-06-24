@@ -9,6 +9,6 @@ func main() {
 	s := new(structpack.ExpStruct)
 	s.Mi = 5
 	s.Mf = 10.5
-	s.logself()
+	s.LogSelf()
 	fmt.Printf("s:%v\n", s)
 }
